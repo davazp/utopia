@@ -100,6 +100,8 @@
 (use-package expand-region)
 (use-package multiple-cursors)
 
+(use-package wgrep)
+
 
 ;;
 ;; Ivy completion
