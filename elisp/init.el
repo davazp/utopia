@@ -230,7 +230,9 @@
 (general-define-key
  :prefix "C-c"
  "a" '(org-agenda :which-key "Show org-mode agenda")
- "t" '(vterm :which-key "Open terminal"))
+ "t" '(vterm :which-key "Open terminal")
+ "C-r" '(ivy-resume :which-key "Resume last completion command")
+ "C-e" '(flycheck-list-errors :which-key "List flycheck errors"))
 
 (general-define-key
  :prefix "C-c m"
@@ -245,7 +247,6 @@
 
 (general-define-key
  "C-c p" '(:keymap projectile-command-map :which-key "Project"))
-
 
 
 (provide 'init)
