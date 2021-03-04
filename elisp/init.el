@@ -118,6 +118,10 @@
   (counsel-mode))
 
 
+;;
+;; Language server supportt
+;;
+
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -139,6 +143,7 @@
   (global-flycheck-mode))
 
 (use-package format-all
+  :diminish format-all-mode
   :commands (format-all-buffer format-all-mode)
   :hook (prog-mode . format-all-mode)
   :config
@@ -187,7 +192,9 @@
 (use-package typescript-mode
   :mode "\\.tsx\\'"
   :hook (typescript-mode . subword-mode)
-  :hook (typescript-mode . lsp))
+  :hook (typescript-mode . lsp)
+  :config
+  (setq typescript-indent-level 2))
 
 (use-package add-node-modules-path
   :hook (typescript-mode . add-node-modules-path)
