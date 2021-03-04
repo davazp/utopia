@@ -103,8 +103,21 @@
 
 
 ;;
-;; Code completion
+;; Ivy completion
 ;;
+
+(use-package ivy
+  :diminish ivy-mode
+  :init
+  (setq ivy-use-virtual-buffers t)
+  (ivy-mode))
+
+(use-package counsel
+  :diminish counsel-mode
+  :init
+  (counsel-mode))
+
+
 (use-package lsp-mode
   :init
   (setq lsp-keymap-prefix "C-c l")
@@ -142,7 +155,12 @@
   :init
   (projectile-mode)
   :config
-  (setq projectile-project-search-path '("~/Projects")))
+  (setq projectile-project-search-path '("~/Projects"))
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+(use-package counsel-projectile
+  :init
+  (counsel-projectile-mode))
 
 
 ;;
