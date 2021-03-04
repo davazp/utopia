@@ -175,6 +175,12 @@
   :hook '(dired-mode . all-the-icons-dired-mode))
 
 
+;; Editor settings
+(use-package editorconfig
+  :diminish editorconfig-mode
+  :config
+  (editorconfig-mode 1))
+
 ;;
 ;; Languages
 ;;
