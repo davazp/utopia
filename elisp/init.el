@@ -74,9 +74,8 @@
 ;;
 (use-package which-key
   :diminish which-key-mode
-  :init
-  (which-key-mode)
   :config
+  (which-key-mode)
   (setq which-key-idle-delay 0.5))
 
 (use-package org
@@ -94,8 +93,8 @@
 (use-package smartparens
   :init
   (require 'smartparens-config)
-  (smartparens-global-strict-mode)
   :config
+  (smartparens-global-strict-mode)
   (sp-use-paredit-bindings))
 
 (use-package expand-region)
@@ -108,13 +107,13 @@
 
 (use-package ivy
   :diminish ivy-mode
-  :init
+  :config
   (setq ivy-use-virtual-buffers t)
   (ivy-mode))
 
 (use-package counsel
   :diminish counsel-mode
-  :init
+  :config
   (counsel-mode))
 
 
@@ -123,15 +122,15 @@
 ;;
 
 (use-package lsp-mode
-  :init
-  (setq lsp-keymap-prefix "C-c l")
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
-  :commands lsp)
+  :commands lsp
+  :config
+  (setq lsp-keymap-prefix "C-c l"))
 
 (use-package lsp-ui)
 (use-package company
-  :init
+  :config
   (global-company-mode))
 
 ;;
@@ -139,7 +138,7 @@
 ;;
 
 (use-package flycheck
-  :init
+  :config
   (global-flycheck-mode))
 
 (use-package format-all
@@ -157,14 +156,13 @@
 ;;
 
 (use-package projectile
-  :init
-  (projectile-mode)
   :config
+  (projectile-mode)
   (setq projectile-project-search-path '("~/Projects"))
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package counsel-projectile
-  :init
+  :config
   (counsel-projectile-mode))
 
 
