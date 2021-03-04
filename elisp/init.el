@@ -118,12 +118,20 @@
   (global-company-mode))
 
 ;;
-;; Linting
+;; Linting & Formatting
 ;;
 
 (use-package flycheck
   :init
   (global-flycheck-mode))
+
+(use-package format-all
+  :commands (format-all-buffer format-all-mode)
+  :hook (prog-mode . format-all-mode)
+  :config
+  (setq-default format-all-formatters
+		'(("JavaScript" prettier)
+		  ("TypeScript" prettier))))
 
 
 ;;
@@ -145,8 +153,8 @@
 
 ;; Dired
 (use-package all-the-icons)
-(use-package all-the-icons-dired)
-(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+(use-package all-the-icons-dired
+  :hook '(dired-mode . all-the-icons-dired-mode))
 
 
 ;;
@@ -156,6 +164,11 @@
   :mode "\\.tsx\\'"
   :hook (typescript-mode . subword-mode)
   :hook (typescript-mode . lsp))
+
+(use-package add-node-modules-path
+  :hook (typescript-mode . add-node-modules-path)
+  :hook (javascript-mode . add-node-modules-path))
+
 
 (use-package macrostep
   :general
