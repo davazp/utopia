@@ -127,7 +127,7 @@
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp
-  :config
+  :init
   (setq lsp-keymap-prefix "C-c l"))
 
 (use-package lsp-ui)
