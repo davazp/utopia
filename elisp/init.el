@@ -256,6 +256,7 @@
  :prefix "C-c"
  "a" '(org-agenda :which-key "Show org-mode agenda")
  "t" '(vterm :which-key "Open terminal")
+ "C-t" 'toggle-truncate-lines
  "C-r" '(ivy-resume :which-key "Resume last completion command")
  "C-e" '(flycheck-list-errors :which-key "List flycheck errors"))
 
