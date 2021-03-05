@@ -48,9 +48,6 @@
 
 (use-package general)
 
-(require 'init-env)
-
-
 ;;
 ;; General
 ;;
@@ -60,6 +57,11 @@
 (setq mac-command-modifier 'meta)
 
 (use-package restart-emacs)
+
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
 
 
 ;;
