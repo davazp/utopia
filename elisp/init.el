@@ -82,7 +82,10 @@
 
 
 ;; Allow to diminish minor modes so they do not clutter the modeline
-(use-package diminish)
+(use-package diminish
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'auto-revert-mode))
 
 ;;
 ;; Keybindings
@@ -150,6 +153,7 @@
 
 (use-package lsp-ui)
 (use-package company
+  :diminish company-mode
   :config
   (global-company-mode))
 
