@@ -230,6 +230,7 @@
   :hook (typescript-mode . add-node-modules-path)
   :hook (javascript-mode . add-node-modules-path))
 
+(use-package graphql-mode)
 
 (use-package macrostep
   :general
