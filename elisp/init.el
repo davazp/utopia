@@ -81,6 +81,9 @@
 (use-package org
   :straight (:type built-in))
 
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode))
+
 
 ;; Dim parenthesis
 (use-package paren-face)
@@ -220,6 +223,7 @@
 (setq custom-file "~/.emacs-custom.el")
 (when (file-exists-p custom-file)
   (load custom-file))
+
 
 
 ;; Custom global keybindings
