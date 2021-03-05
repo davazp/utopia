@@ -226,7 +226,8 @@
 
 (use-package macrostep
   :general
-  (:keymap emacs-lisp-mode-map "C-c RET" 'macrostep-expand))
+  (:keymaps 'emacs-lisp-mode-map
+	    "C-c RET" 'macrostep-expand))
 
 ;;
 ;; Themes
