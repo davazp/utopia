@@ -87,6 +87,9 @@
   (diminish 'eldoc-mode)
   (diminish 'auto-revert-mode))
 
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+
 ;;
 ;; Keybindings
 ;;
