@@ -133,7 +133,7 @@
 
 
 ;;
-;; Ivy completion
+;; Ivy/Counsel/Swiper completion
 ;;
 
 (use-package ivy
@@ -147,6 +147,7 @@
   :config
   (counsel-mode))
 
+(define-key isearch-mode-map (kbd "M-i") 'swiper-from-isearch)
 
 ;;
 ;; Language server supportt
