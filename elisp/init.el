@@ -276,15 +276,12 @@
   :hook (typescript-mode . add-node-modules-path)
   :hook (javascript-mode . add-node-modules-path))
 
-(use-package graphql-mode)
-
 (use-package macrostep
   :general
   (:keymaps 'emacs-lisp-mode-map
 	    "C-c RET" 'macrostep-expand))
 
 (use-package forth-mode)
-
 
 ;; SQL
 
@@ -297,12 +294,13 @@
 	sqlformat-args '("-s2" "-g" "-u2")))
 
 
-;; YAML / Markup languages
+;; Misc
 
 (use-package yaml-mode)
 (use-package docker-compose-mode)
 (use-package terraform-mode)
-
+(use-package ninja-mode)
+(use-package graphql-mode)
 
 
 ;;
