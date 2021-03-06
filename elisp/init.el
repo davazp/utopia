@@ -344,7 +344,8 @@
  ;; "S" '(lsp-ivy-workspace-symbol :which-key "Symbol in all active workspaces")
  "C-t" 'toggle-truncate-lines
  "C-r" '(ivy-resume :which-key "Resume last completion command")
- "C-e" '(flycheck-list-errors :which-key "List flycheck errors"))
+ "C-e" '(flycheck-list-errors :which-key "List flycheck errors")
+ "P" '(prodigy :which-key "Process manager"))
 
 (general-define-key
  :prefix "C-c p"
