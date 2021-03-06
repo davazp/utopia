@@ -287,7 +287,9 @@
 (general-define-key
  :prefix "C-c"
  "a" '(org-agenda :which-key "Show org-mode agenda")
+ "l" '(org-store-link :which-key "Store a org-mode link")
  "t" '(vterm :which-key "Open terminal")
+ "p" '(:keymap projectile-command-map :which-key "Project")
  "C-t" 'toggle-truncate-lines
  "C-r" '(ivy-resume :which-key "Resume last completion command")
  "C-e" '(flycheck-list-errors :which-key "List flycheck errors"))
@@ -302,9 +304,6 @@
  :prefix "C-c r"
  "" '(:ignore t :which-key "Restart Emacs")
  "r" '(restart-emacs :which-key "Restart Emacs"))
-
-(general-define-key
- "C-c p" '(:keymap projectile-command-map :which-key "Project"))
 
 
 (provide 'init)
