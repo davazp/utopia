@@ -90,6 +90,11 @@
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
+;; Highlight TODO, FIXME and NOTE in comments.
+(use-package hl-todo
+  :config
+  (global-hl-todo-mode 1))
+
 ;;
 ;; Keybindings
 ;;
@@ -214,10 +219,6 @@
   :config
   (editorconfig-mode 1))
 
-;; Highlight TODO, FIXME and NOTE in comments.
-(use-package hl-todo
-  :config
-  (global-hl-todo-mode 1))
 
 ;;
 ;; Languages
