@@ -46,6 +46,8 @@
     (exec-path-from-shell-initialize)))
 
 
+(use-package envrc)
+
 ;;
 ;; Performance
 ;;
@@ -253,6 +255,15 @@
 (use-package monokai-theme)
 (use-package dracula-theme)
 (use-package gruvbox-theme)
+
+
+;;
+
+;; We enable envrc after all other modes are enabled. This is recommended in its README
+;;   https://github.com/purcell/envrc
+;; to make its hook run _before_ other modes, giving the other modes like flycheck
+;; the chance to see the defined environment variables.
+(envrc-global-mode)
 
 
 (setq default-directory "~/")
