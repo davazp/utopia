@@ -85,9 +85,7 @@
 
 ;; Allow to diminish minor modes so they do not clutter the modeline
 (use-package diminish
-  :config
-  (diminish 'eldoc-mode)
-  (diminish 'auto-revert-mode))
+  :diminish eldoc-mode)
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
@@ -122,6 +120,7 @@
 ;; Editor
 ;;
 (use-package smartparens
+  :diminish smartparens-mode
   :init
   (require 'smartparens-config)
   :config
@@ -203,7 +202,8 @@
 ;;
 ;; Tools
 ;;
-(use-package magit)
+(use-package magit
+  :diminish auto-revert-mode)
 (use-package forge
   :after magit)
 
