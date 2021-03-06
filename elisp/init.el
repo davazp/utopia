@@ -23,7 +23,6 @@
   (straight-use-package 'use-package)
   (setq straight-use-package-by-default t))
 
-
 (setq user-full-name "David Vázquez Púa")
 (setq user-mail-address "davazp@gmail.com")
 
@@ -191,8 +190,7 @@
 (use-package projectile
   :config
   (projectile-mode)
-  (setq projectile-project-search-path '("~/Projects"))
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+  (setq projectile-project-search-path '("~/Projects")))
 
 (use-package counsel-projectile
   :config
@@ -281,7 +279,13 @@
 
 ;; Custom global keybindings
 
+(defun davazp/swap-last-two-buffers ()
+  "Swap between the last current and the last visited buffer."
+  (interactive)
+  (switch-to-buffer (other-buffer)))
+
 (general-define-key
+ "C-;" 'davazp/swap-last-two-buffers
  "C-=" 'er/expand-region)
 
 (general-define-key
@@ -289,16 +293,30 @@
  "a" '(org-agenda :which-key "Show org-mode agenda")
  "l" '(org-store-link :which-key "Store a org-mode link")
  "t" '(vterm :which-key "Open terminal")
- "p" '(:keymap projectile-command-map :which-key "Project")
+ ;; "s" '(lsp-ivy-workspace-symbol :which-key "Symbol in workspace")
+ ;; "S" '(lsp-ivy-workspace-symbol :which-key "Symbol in all active workspaces")
  "C-t" 'toggle-truncate-lines
  "C-r" '(ivy-resume :which-key "Resume last completion command")
  "C-e" '(flycheck-list-errors :which-key "List flycheck errors"))
+
+(general-define-key
+ :prefix "C-c p"
+ "f" '(projectile-find-file :which-key "Find a file in the project")
+ "p" '(projectile-switch-project :which-key "Switch to project")
+ "E" '(projectile-edit-dir-locals :which-key "Edit dir locals")
+ "c" '(projectile-compile-project :which-key "Compile project")
+ "s" '(counsel-projectile-git-grep :which-key "Search in repository")
+ "x" '(:ignore t :which-key "Execute...")
+ "x t" '(projectile-run-vterm :which-key "Execute terminal"))
 
 (general-define-key
  :prefix "C-c m"
  "" '(:ignore t :which-key "Multiple cursors")
  "l" 'mc/edit-lines
  "a" 'mc/mark-all-dwim)
+
+
+
 
 (general-define-key
  :prefix "C-c r"
