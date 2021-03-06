@@ -161,6 +161,21 @@
 
 (define-key isearch-mode-map (kbd "M-i") 'swiper-from-isearch)
 
+;; A better sorting and filtering of ivy candidates.
+(use-package ivy-prescient
+  :config
+  (ivy-prescient-mode))
+
+;; Provide extra information in the ivy's output. For example, adds
+;; docstrings to elisps commands and variables.
+(use-package ivy-rich
+  :config
+  (ivy-rich-mode)
+  ;; I have no idea what this does, but it is recommended in the ivy-rich website
+  ;; https://github.com/Yevgnen/ivy-rich
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line))
+
+
 ;;
 ;; Language server supportt
 ;;
@@ -281,7 +296,6 @@
 
 (setq default-directory "~/")
 
-(setq custom-file "~/.emacs-custom.el")
 (when (file-exists-p custom-file)
   (load custom-file))
 
@@ -314,6 +328,7 @@
 
 (general-define-key
  :prefix "C-c p"
+ "" '(:ignore t :which-key "Projectile...")
  "f" '(projectile-find-file :which-key "Find a file in the project")
  "p" '(projectile-switch-project :which-key "Switch to project")
  "E" '(projectile-edit-dir-locals :which-key "Edit dir locals")
@@ -327,9 +342,6 @@
  "" '(:ignore t :which-key "Multiple cursors")
  "l" 'mc/edit-lines
  "a" 'mc/mark-all-dwim)
-
-
-
 
 (general-define-key
  :prefix "C-c r"
