@@ -143,6 +143,12 @@
 
 (use-package wgrep)
 
+;; Similar to the command `whitespace-cleanup'. However, this cleans
+;; up the buffer only if it was clean to start with. Preventing you
+;; from creating messy diffs.
+(use-package whitespace-cleanup-mode
+  :config
+  (global-whitespace-cleanup-mode))
 
 ;;
 ;; Ivy/Counsel/Swiper completion
