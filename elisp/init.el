@@ -27,6 +27,9 @@
 (setq user-mail-address "davazp@gmail.com")
 
 
+;; This package will customize many packages for us to write their
+;; files to ~/.emacs.d/var and ~/.emacs.d/etc, instead of cluttering
+;; completely ~/.emacs and the ~.
 (use-package no-littering
   :config
   (require 'recentf)
