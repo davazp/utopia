@@ -223,6 +223,8 @@
 
 (use-package prodigy)
 
+(use-package docker)
+
 ;;
 ;; Languages
 ;;
