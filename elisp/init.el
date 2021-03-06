@@ -219,6 +219,7 @@
   :config
   (editorconfig-mode 1))
 
+(use-package prodigy)
 
 ;;
 ;; Languages
@@ -260,6 +261,9 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+(let ((localfile (expand-file-name "local.el" user-emacs-directory)))
+  (when (file-exists-p localfile)
+    (load localfile)))
 
 
 ;; Custom global keybindings
