@@ -197,6 +197,9 @@
 ;; Tools
 ;;
 (use-package magit)
+(use-package forge
+  :after magit)
+
 (use-package vterm)
 
 ;; Dired
