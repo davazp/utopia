@@ -284,6 +284,17 @@
 (use-package forth-mode)
 
 
+;; SQL
+
+;; Auto format sql buffers with pgformatter. Muust be installed
+;; manually: https://github.com/darold/pgFormatter
+(use-package sqlformat
+  :hook (sql-mode . sqlformat-on-save-mode)
+  :init
+  (setq sqlformat-command 'pgformatter
+	sqlformat-args '("-s2" "-g" "-u2")))
+
+
 ;;
 ;; Themes
 ;;
