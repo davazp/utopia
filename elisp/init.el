@@ -237,6 +237,9 @@
   (:keymaps 'emacs-lisp-mode-map
 	    "C-c RET" 'macrostep-expand))
 
+(use-package forth-mode)
+
+
 ;;
 ;; Themes
 ;;
