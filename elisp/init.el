@@ -27,6 +27,18 @@
 (setq user-mail-address "davazp@gmail.com")
 
 
+(use-package no-littering
+  :config
+  (require 'recentf)
+  (add-to-list 'recentf-exclude no-littering-var-directory)
+  (add-to-list 'recentf-exclude no-littering-etc-directory))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+
+(setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+
+
 (use-package general)
 
 ;;
