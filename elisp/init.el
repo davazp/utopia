@@ -295,6 +295,13 @@
 	sqlformat-args '("-s2" "-g" "-u2")))
 
 
+;; YAML
+
+(use-package yaml-mode)
+(use-package docker-compose-mode)
+
+
+
 ;;
 ;; Themes
 ;;
