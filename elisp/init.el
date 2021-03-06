@@ -295,10 +295,11 @@
 	sqlformat-args '("-s2" "-g" "-u2")))
 
 
-;; YAML
+;; YAML / Markup languages
 
 (use-package yaml-mode)
 (use-package docker-compose-mode)
+(use-package terraform-mode)
 
 
 
