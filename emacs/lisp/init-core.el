@@ -366,6 +366,7 @@
 (use-package terraform-mode)
 (use-package ninja-mode)
 (use-package graphql-mode)
+(use-package nix-mode)
 
 
 ;;
