@@ -283,7 +283,8 @@
   :hook (prog-mode . format-all-mode)
   :config
   (setq-default format-all-formatters
-                '(("JavaScript" prettier)
+                '(("Nix" nixfmt)
+                  ("JavaScript" prettier)
                   ("TypeScript" prettier))))
 
 
