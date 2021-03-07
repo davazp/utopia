@@ -114,6 +114,11 @@
 ;;
 ;; Keybindings
 ;;
+
+(use-package keyfreq
+  :config
+  (keyfreq-mode)
+  (keyfreq-autosave-mode))
 (use-package which-key
   :diminish which-key-mode
   :config
@@ -152,6 +157,7 @@
 ;; up the buffer only if it was clean to start with. Preventing you
 ;; from creating messy diffs.
 (use-package whitespace-cleanup-mode
+  :diminish whitespace-cleanup-mode
   :config
   (global-whitespace-cleanup-mode))
 
@@ -163,6 +169,7 @@
   :diminish ivy-mode
   :config
   (setq ivy-use-virtual-buffers t)
+  (setq ivy-virtual-abbreviate 'abbreviate)
   (ivy-mode))
 
 (use-package counsel
@@ -239,8 +246,7 @@
 ;;
 ;; Tools
 ;;
-(use-package magit
-  :diminish auto-revert-mode)
+(use-package magit)
 (use-package forge
   :after magit)
 
