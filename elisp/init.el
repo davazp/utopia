@@ -110,6 +110,7 @@
   :config
   (global-hl-todo-mode 1))
 
+(use-package zoom-frm)
 
 (use-package presentation
   :config
@@ -410,7 +411,8 @@
 
 (general-define-key
  "C-;" 'davazp/swap-last-two-buffers
- "C-=" 'er/expand-region)
+ "C-=" 'er/expand-region
+ [remap text-scale-adjust] 'zoom-in/out)
 
 (general-define-key
  :prefix "C-c"
