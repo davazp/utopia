@@ -111,6 +111,21 @@
   (global-hl-todo-mode 1))
 
 
+(use-package presentation
+  :config
+  (add-hook 'presentation-on-hook 'davazp/presentaton-on)
+  (add-hook 'presentation-off-hook 'davazp/presentation-off))
+
+(use-package focus)
+
+(defun davazp/presentaton-on ()
+  (focus-mode 1))
+
+(defun davazp/presentation-off ()
+  (focus-mode -1))
+
+
+
 ;;
 ;; Window management
 ;;
@@ -152,6 +167,11 @@
 ;;
 
 (setq-default indent-tabs-mode nil)
+
+(use-package saveplace
+  :straight (:type built-in)
+  :config
+  (save-place-mode))
 
 (use-package smartparens
   :diminish smartparens-mode
@@ -396,7 +416,6 @@
  :prefix "C-c"
  "a" '(org-agenda :which-key "Show org-mode agenda")
  "l" '(org-store-link :which-key "Store a org-mode link")
- "t" '(vterm :which-key "Open terminal")
  "C" '(davazp/find-config :which-key "Open emacs config.")
  ;; "s" '(lsp-ivy-workspace-symbol :which-key "Symbol in workspace")
  ;; "S" '(lsp-ivy-workspace-symbol :which-key "Symbol in all active workspaces")
@@ -404,6 +423,17 @@
  "C-r" '(ivy-resume :which-key "Resume last completion command")
  "C-e" '(flycheck-list-errors :which-key "List flycheck errors")
  "P" '(prodigy :which-key "Process manager"))
+
+(general-define-key
+ :prefix "C-c t"
+ "" '(:ignore t :which-key "Toggle...")
+ "b" '(presentation-mode :which-key "Toggle presentation mode")
+ "f" '(focus-mode :which-key "Focus mode"))
+
+(general-define-key
+ :prefix "C-c o"
+ "" '(:ignore t :which-key "Open...")
+ "t" '(vterm :which-key "Open terminal"))
 
 (general-define-key
  :prefix "C-c p"
