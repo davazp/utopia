@@ -9,15 +9,15 @@
 (eval-when-compile
   (defvar bootstrap-version)
   (let ((bootstrap-file
-	 (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-	(bootstrap-version 5))
+         (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+        (bootstrap-version 5))
     (unless (file-exists-p bootstrap-file)
       (with-current-buffer
-	  (url-retrieve-synchronously
-	   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-	   'silent 'inhibit-cookies)
-	(goto-char (point-max))
-	(eval-print-last-sexp)))
+          (url-retrieve-synchronously
+           "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+           'silent 'inhibit-cookies)
+        (goto-char (point-max))
+        (eval-print-last-sexp)))
     (load bootstrap-file nil 'nomessage))
 
   (straight-use-package 'use-package)
@@ -140,6 +140,10 @@
 ;;
 ;; Editor
 ;;
+
+(setq-default indent-tabs-mode nil)
+
+
 (use-package smartparens
   :diminish smartparens-mode
   :init
@@ -225,8 +229,8 @@
   :hook (prog-mode . format-all-mode)
   :config
   (setq-default format-all-formatters
-		'(("JavaScript" prettier)
-		  ("TypeScript" prettier))))
+                '(("JavaScript" prettier)
+                  ("TypeScript" prettier))))
 
 
 ;;
@@ -268,6 +272,7 @@
 
 (use-package docker)
 
+
 ;;
 ;; Languages
 ;;
@@ -285,7 +290,7 @@
 (use-package macrostep
   :general
   (:keymaps 'emacs-lisp-mode-map
-	    "C-c RET" 'macrostep-expand))
+            "C-c RET" 'macrostep-expand))
 
 (use-package forth-mode)
 
@@ -297,7 +302,7 @@
   :hook (sql-mode . sqlformat-on-save-mode)
   :init
   (setq sqlformat-command 'pgformatter
-	sqlformat-args '("-s2" "-g" "-u2")))
+        sqlformat-args '("-s2" "-g" "-u2")))
 
 
 ;; Misc
@@ -328,6 +333,7 @@
 (envrc-global-mode)
 
 
+
 (setq default-directory "~/")
 
 (when (file-exists-p custom-file)
@@ -344,6 +350,11 @@
   "Swap between the last current and the last visited buffer."
   (interactive)
   (switch-to-buffer (other-buffer)))
+
+(defun davazp/find-config ()
+  "Edit config.org"
+  (interactive)
+  (find-file "~/.emacs.d/elisp/init.el"))
 
 (general-define-key
  "C-;" 'davazp/swap-last-two-buffers
