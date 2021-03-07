@@ -378,6 +378,16 @@
 (use-package monokai-theme)
 (use-package dracula-theme)
 (use-package gruvbox-theme)
+(use-package afternoon-theme)
+(use-package badger-theme)
+(use-package cherry-blossom-theme)
+(use-package cyberpunk-theme)
+(use-package grandshell-theme)
+(use-package gruber-darker-theme)
+
+(use-package hemisu-theme)
+(use-package leuven-theme)
+
 
 
 ;;
