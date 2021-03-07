@@ -223,6 +223,11 @@
 ;; Ivy/Counsel/Swiper completion
 ;;
 
+(use-package recentf
+  :config
+  (setq recentf-max-saved-items 1000)
+  )
+
 (use-package ivy
   :diminish ivy-mode
   :config
