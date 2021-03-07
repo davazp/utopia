@@ -1,7 +1,6 @@
 ;;; init.el ---                                      -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-
 ;;
 
 ;;; Code:
@@ -163,6 +162,21 @@
 
 
 (use-package wgrep)
+
+
+(use-package whitespace
+  :straight (:type built-in)
+  :diminish global-whitespace-mode
+  :config
+  (global-whitespace-mode)
+  (setq whitespace-style
+      '(face
+        tabs
+        trailing
+        space-before-tab
+        empty
+        space-after-tab
+        tab-mark)))
 
 ;; Similar to the command `whitespace-cleanup'. However, this cleans
 ;; up the buffer only if it was clean to start with. Preventing you
