@@ -372,6 +372,7 @@
  "a" '(org-agenda :which-key "Show org-mode agenda")
  "l" '(org-store-link :which-key "Store a org-mode link")
  "t" '(vterm :which-key "Open terminal")
+ "C" '(davazp/find-config :which-key "Open emacs config.")
  ;; "s" '(lsp-ivy-workspace-symbol :which-key "Symbol in workspace")
  ;; "S" '(lsp-ivy-workspace-symbol :which-key "Symbol in all active workspaces")
  "C-t" 'toggle-truncate-lines
