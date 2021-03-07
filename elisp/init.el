@@ -110,6 +110,17 @@
   :config
   (global-hl-todo-mode 1))
 
+
+;;
+;; Window management
+;;
+
+;; Use popup windows for some help buffers, so they don't stick around
+;; and messup the window configuration.
+(use-package popwin
+  :config
+  (popwin-mode))
+
 ;;
 ;; Keybindings
 ;;
