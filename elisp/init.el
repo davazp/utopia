@@ -143,7 +143,6 @@
 
 (setq-default indent-tabs-mode nil)
 
-
 (use-package smartparens
   :diminish smartparens-mode
   :init
@@ -154,6 +153,14 @@
 
 (use-package expand-region)
 (use-package multiple-cursors)
+
+;; Smarter cursor movement, by moving first to the indentation point
+;; and then to the beginning of line, for example.
+(use-package mwim
+  :general
+  ("C-a" 'mwim-beginning
+   "C-e" 'mwim-end))
+
 
 (use-package wgrep)
 
