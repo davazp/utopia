@@ -253,7 +253,7 @@
 
 
 ;;
-;; Language server supportt
+;; Language Server Protocol support
 ;;
 
 (use-package lsp-mode
