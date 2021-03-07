@@ -460,5 +460,5 @@
  "r" '(restart-emacs :which-key "Restart Emacs"))
 
 
-(provide 'init)
+(provide 'init-core)
 ;;; init.el ends here

@@ -1,2 +1,2 @@
-(add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
-(require 'init)
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-core)
