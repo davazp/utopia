@@ -351,8 +351,22 @@
   (setq typescript-indent-level 2))
 
 (use-package add-node-modules-path
-  :hook (typescript-mode . add-node-modules-path)
-  :hook (javascript-mode . add-node-modules-path))
+  :config
+  ;;
+  ;; We can't enable add-node-modules-path directly. Instead, we set
+  ;; it up to add node_modules to the path before saving the file. We
+  ;; have to make sure this is done before format-all reads it though.
+  ;;
+  ;; This is necessary to prevent envrc overriding the value. See
+  ;;
+  ;;    https://github.com/purcell/envrc/issues/19
+  ;;
+  (add-hook 'typescript-mode-hook 'davazp/setup-node-modules-path)
+  (add-hook 'js-mode-hook 'davazp/setup-node-modules-path))
+
+(defun davazp/setup-node-modules-path ()
+  (add-hook 'before-save-hook 'add-node-modules-path nil t))
+
 
 (use-package macrostep
   :general
