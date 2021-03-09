@@ -152,7 +152,10 @@
   (setq which-key-idle-delay 0.5))
 
 (use-package org
-  :straight (:type built-in))
+  :config
+  (setq org-odd-levels-only t)
+  (setq org-special-ctrl-k t)
+  (setq org-special-ctrl-a/e t))
 
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
@@ -169,6 +172,7 @@
 
 (setq-default indent-tabs-mode nil)
 
+
 (use-package saveplace
   :straight (:type built-in)
   :config
@@ -179,6 +183,9 @@
   :init
   (require 'smartparens-config)
   :config
+  ;; Without this, smartparens keybinings will break
+  ;; variables like `org-special-ctrl-k'.
+  (add-to-list 'sp-ignore-modes-list 'org-mode)
   (smartparens-global-strict-mode)
   (sp-use-paredit-bindings))
 
