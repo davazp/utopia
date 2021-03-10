@@ -126,6 +126,10 @@
   (focus-mode -1))
 
 
+(use-package dimmer
+  :config
+  (dimmer-configure-which-key)
+  (dimmer-mode))
 
 ;;
 ;; Window management
