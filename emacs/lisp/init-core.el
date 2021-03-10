@@ -45,6 +45,7 @@
 ;; General
 ;;
 (setq make-backup-files nil)
+(setq create-lockfiles nil)
 
 ;; Mac adjustmenets
 (setq mac-command-modifier 'meta)
