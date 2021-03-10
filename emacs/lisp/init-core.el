@@ -227,6 +227,10 @@
   :config
   (global-whitespace-cleanup-mode))
 
+
+(use-package highlight-symbol
+  :hook (prog-mode . highlight-symbol-nav-mode))
+
 ;;
 ;; Ivy/Counsel/Swiper completion
 ;;
@@ -423,16 +427,8 @@
 ;; the chance to see the defined environment variables.
 (envrc-global-mode)
 
-
-
-(setq default-directory "~/")
-
-(when (file-exists-p custom-file)
-  (load custom-file))
-
 (let ((localfile (expand-file-name "local.el" user-emacs-directory)))
-  (when (file-exists-p localfile)
-    (load localfile)))
+  (load localfile t))    
 
 
 ;; Custom global keybindings
