@@ -112,19 +112,8 @@
 
 (use-package zoom-frm)
 
-(use-package presentation
-  :config
-  (add-hook 'presentation-on-hook 'davazp/presentaton-on)
-  (add-hook 'presentation-off-hook 'davazp/presentation-off))
-
+(use-package presentation)
 (use-package focus)
-
-(defun davazp/presentaton-on ()
-  (focus-mode 1))
-
-(defun davazp/presentation-off ()
-  (focus-mode -1))
-
 
 (use-package dimmer
   :config
