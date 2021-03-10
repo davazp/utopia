@@ -120,6 +120,9 @@
   (dimmer-configure-which-key)
   (dimmer-mode))
 
+;; Display a clock in the modeline
+(display-time-mode)
+
 ;;
 ;; Window management
 ;;
