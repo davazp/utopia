@@ -166,6 +166,11 @@
 ;; Editor
 ;;
 
+
+;; Ensure that M-a and M-e will stop after a dot, even without two
+;; spaces after it.
+(setq sentence-end-double-space nil)
+
 (setq-default indent-tabs-mode nil)
 
 
