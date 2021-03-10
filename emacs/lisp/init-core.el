@@ -25,6 +25,7 @@
 (setq user-full-name "David Vázquez Púa")
 (setq user-mail-address "davazp@gmail.com")
 
+(setq default-directory "~/")
 
 ;; This package will customize many packages for us to write their
 ;; files to ~/.emacs.d/var and ~/.emacs.d/etc, instead of cluttering
@@ -37,9 +38,6 @@
 
 (setq auto-save-file-name-transforms
       `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-
-(setq custom-file (no-littering-expand-etc-file-name "custom.el"))
-
 
 (use-package general)
 
@@ -122,6 +120,8 @@
 
 ;; Display a clock in the modeline
 (display-time-mode)
+
+
 
 ;;
 ;; Window management
@@ -388,9 +388,12 @@
 (use-package nix-mode)
 
 
+
+
 ;;
 ;; Themes
 ;;
+
 (use-package zenburn-theme)
 (use-package solarized-theme)
 (use-package monokai-theme)
@@ -406,9 +409,13 @@
 (use-package hemisu-theme)
 (use-package leuven-theme)
 
+(setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+(load custom-file t)
 
+(use-package smart-mode-line
+  :config
+  (sml/setup))
 
-;;
 
 ;; We enable envrc after all other modes are enabled. This is recommended in its README
 ;;   https://github.com/purcell/envrc
