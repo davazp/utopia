@@ -36,10 +36,8 @@
   (setq org-catch-invisible-edits 'show-and-error)
 
   (setq org-enforce-todo-dependencies t)
+  (setq org-startup-indented t)
 
-  (require 'org-tempo)
-  (require 'org-clock)
-  (require 'ox-md)
 
   ;; (setq org-clock-idle-time nil)
   ;; (setq org-log-done 'time)

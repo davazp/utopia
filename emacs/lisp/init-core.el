@@ -41,6 +41,9 @@
 
 (use-package general)
 
+;; Declare it early to prevent having a mixed installation.
+(use-package org)
+
 ;;
 ;; General
 ;;
@@ -86,12 +89,13 @@
 
 ;;
 ;; Additional modules
-;; 
+;;
 (require 'init-ivy)
 (require 'init-editor)
 (require 'init-ui)
 (require 'init-tools)
 (require 'init-langs)
+(require 'init-org)
 
 ;;
 ;; Projects
@@ -141,7 +145,7 @@
 (envrc-global-mode)
 
 (let ((localfile (expand-file-name "local.el" user-emacs-directory)))
-  (load localfile t))    
+  (load localfile t))
 
 
 ;; Custom global keybindings
