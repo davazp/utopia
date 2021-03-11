@@ -33,10 +33,6 @@
 ;; Display a clock in the modeline
 (display-time-mode)
 
-;; Allow to diminish minor modes so they do not clutter the modeline
-(use-package diminish
-  :diminish eldoc-mode)
-
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 

@@ -41,6 +41,10 @@
 
 (use-package general)
 
+;; Allow to diminish minor modes so they do not clutter the modeline
+(use-package diminish
+  :diminish eldoc-mode)
+
 ;; Declare it early to prevent having a mixed installation.
 (use-package org)
 
