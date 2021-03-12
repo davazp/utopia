@@ -38,6 +38,8 @@
   (setq org-enforce-todo-dependencies t)
   (setq org-startup-indented t)
 
+  (setq org-M-RET-may-split-line nil)
+  (setq org-agenda-span 14)
 
   ;; (setq org-clock-idle-time nil)
   ;; (setq org-log-done 'time)
