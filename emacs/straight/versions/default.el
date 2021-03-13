@@ -82,6 +82,7 @@
  ("projectile" . "f3f8a6505d50ca0f03f7deef99a1c8aa3bcd9e58")
  ("restart-emacs" . "1607da2bc657fe05ae01f7fdf26f716eafead02c")
  ("rich-minority" . "a03e693f6f9232cf75363aaaf1cb041f21675c19")
+ ("rust-mode" . "e9e9e32c4f82a9b895543c120b327ab5536ec42b")
  ("s.el" . "43ba8b563bee3426cead0e6d4ddc09398e1a349d")
  ("smart-mode-line" . "999be065b195f2eddb4e1b629f99038d832d44b7")
  ("smartparens" . "fb1ce4b4013fe6f86dde9dd5bd5d4c032ab0d45b")

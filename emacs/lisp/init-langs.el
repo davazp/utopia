@@ -45,7 +45,8 @@
                 '(("Nix" nixfmt)
                   ("JavaScript" prettier)
                   ("TypeScript" prettier)
-                  ("SQL" (pgformatter "-s2")))))
+                  ("SQL" (pgformatter "-s2"))
+                  ("Rust" rustfmt))))
 
 
 (use-package typescript-mode
@@ -79,6 +80,13 @@
   :general
   (:keymaps 'emacs-lisp-mode-map
             "C-c RET" 'macrostep-expand))
+
+
+;; Rust
+
+(use-package rust-mode
+  :hook (rust-mode . lsp))
+
 
 ;; Other languages
 
