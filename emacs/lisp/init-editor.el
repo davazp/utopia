@@ -38,7 +38,7 @@
   :diminish global-whitespace-mode
   :config
   (global-whitespace-mode)
-  (setq whitespace-global-modes '(not dired-mode))
+  (setq whitespace-global-modes '(not dired-mode magit-status-mode magit-process-mode))
   (setq whitespace-style
       '(face
         tabs
