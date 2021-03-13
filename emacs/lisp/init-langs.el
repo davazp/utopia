@@ -19,8 +19,10 @@
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   :commands lsp
+  ;; This is the default. But let's be explicit. We'll bind most
+  ;; common commands under C-c anywa.
   :init
-  (setq lsp-keymap-prefix "C-c l"))
+  (setq lsp-keymap-prefix "s-l"))
 
 (use-package lsp-ui)
 (use-package company

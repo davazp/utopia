@@ -108,7 +108,8 @@
 (use-package projectile
   :config
   (projectile-mode)
-  (setq projectile-project-search-path '("~/Projects")))
+  (setq projectile-project-search-path '("~/Projects"))
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
 
 (use-package counsel-projectile
   :config
@@ -175,24 +176,24 @@
   (interactive)
   (switch-to-buffer (other-buffer)))
 
-(defun davazp/find-config ()
-  "Edit config.org"
-  (interactive)
-  (find-file "~/.emacs.d/elisp/init.el"))
-
 (general-define-key
  "C-;" 'davazp/swap-last-two-buffers
  "C-=" 'er/expand-region
  [remap text-scale-adjust] 'zoom-in/out)
 
 (general-define-key
+ :keymaps '(lsp-mode-map)
+ :prefix "C-c"
+ "r" '(lsp-rename :which-key "Rename")
+ "a" '(lsp-execute-code-action :which-key "Code action")
+ "g" (general-simulate-key "s-l g" :which-key "Go to..."))
+
+(general-define-key
  :prefix "C-c"
  "a" '(org-agenda :which-key "Show org-mode agenda")
  "l" '(org-store-link :which-key "Store a org-mode link")
- "C" '(davazp/find-config :which-key "Open emacs config.")
- ;; "s" '(lsp-ivy-workspace-symbol :which-key "Symbol in workspace")
- ;; "S" '(lsp-ivy-workspace-symbol :which-key "Symbol in all active workspaces")
- "C-t" 'toggle-truncate-lines
+ "s" '(lsp-ivy-workspace-symbol :which-key "Symbol in workspace")
+ "S" '(lsp-ivy-workspace-symbol :which-key "Symbol in all active workspaces")
  "C-r" '(ivy-resume :which-key "Resume last completion command")
  "C-e" '(flycheck-list-errors :which-key "List flycheck errors")
  "P" '(prodigy :which-key "Process manager"))
@@ -200,6 +201,7 @@
 (general-define-key
  :prefix "C-c t"
  "" '(:ignore t :which-key "Toggle...")
+ "t" '(toggle-truncate-lines :which-key "Toggle Truncate lines")
  "b" '(presentation-mode :which-key "Toggle presentation mode")
  "f" '(focus-mode :which-key "Focus mode"))
 
@@ -211,13 +213,15 @@
 (general-define-key
  :prefix "C-c p"
  "" '(:ignore t :which-key "Projectile...")
+ "d" '(projectile-dired :which-key "Open root directory")
  "f" '(projectile-find-file :which-key "Find a file in the project")
  "p" '(projectile-switch-project :which-key "Switch to project")
  "E" '(projectile-edit-dir-locals :which-key "Edit dir locals")
  "c" '(projectile-compile-project :which-key "Compile project")
+ "k" '(projectile-kill-buffers :which-key "Kill buffers")
+ "r" '(projectile-run-project :which-key "Run project")
  "s" '(counsel-projectile-git-grep :which-key "Search in repository")
- "x" '(:ignore t :which-key "Execute...")
- "x t" '(projectile-run-vterm :which-key "Execute terminal"))
+ "t" '(projectile-run-vterm :which-key "Execute terminal"))
 
 (general-define-key
  :prefix "C-c m"
@@ -226,9 +230,9 @@
  "a" 'mc/mark-all-dwim)
 
 (general-define-key
- :prefix "C-c r"
+ :prefix "C-c R"
  "" '(:ignore t :which-key "Restart Emacs")
- "r" '(restart-emacs :which-key "Restart Emacs"))
+ "R" '(restart-emacs :which-key "Restart Emacs"))
 
 
 (provide 'init-core)
