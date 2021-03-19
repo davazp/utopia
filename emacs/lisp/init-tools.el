@@ -30,5 +30,11 @@
 (use-package docker)
 
 
+(use-package dired
+  :straight (:type built-in)
+  :config
+  (setq dired-listing-switches "-alh"))
+
+
 (provide 'init-tools)
 ;;; init-tools.el ends here
