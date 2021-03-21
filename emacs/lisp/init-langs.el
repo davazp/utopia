@@ -90,6 +90,18 @@
   :hook (rust-mode . lsp))
 
 
+;; Lisp
+;;
+(use-package sly
+  :config
+  (setq inferior-lisp-program "sbcl"))
+
+(use-package sly-macrostep
+  :general
+  (:keymaps 'sly-mode-map
+            "C-c RET" 'macrostep-expand))
+
+
 ;; Other languages
 
 (use-package forth-mode)

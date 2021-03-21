@@ -85,6 +85,8 @@
  ("rich-minority" . "a03e693f6f9232cf75363aaaf1cb041f21675c19")
  ("rust-mode" . "e9e9e32c4f82a9b895543c120b327ab5536ec42b")
  ("s.el" . "43ba8b563bee3426cead0e6d4ddc09398e1a349d")
+ ("sly" . "5966d68727898fa6130fb6bb02208f70aa8d5ce3")
+ ("sly-macrostep" . "5113e4e926cd752b1d0bcc1508b3ebad5def5fad")
  ("smart-mode-line" . "999be065b195f2eddb4e1b629f99038d832d44b7")
  ("smartparens" . "fb1ce4b4013fe6f86dde9dd5bd5d4c032ab0d45b")
  ("solarized-emacs" . "4d4b004460271e310ca45606d24a60e95ca3151d")
