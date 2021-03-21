@@ -100,6 +100,7 @@
 (use-package ninja-mode)
 (use-package graphql-mode)
 (use-package nix-mode)
+(use-package glsl-mode)
 
 
 (provide 'init-langs)

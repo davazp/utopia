@@ -44,6 +44,7 @@
  ("frame-fns" . "b675ee568c0133709c2c39a125395486cdf1c610")
  ("general.el" . "a0b17d207badf462311b2eef7c065b884462cb7c")
  ("ghub" . "f26c1f7e575209da047e77c18d415f9dc11015e2")
+ ("glsl-mode" . "b07112016436d9634cd4ef747f9af6b01366d136")
  ("gnu-elpa-mirror" . "be9f76827527f058e83818ab53c29393ccd99315")
  ("grandshell-theme" . "0ed8e4273607dd4fcaa742b4097259233b09eda6")
  ("graphql-mode" . "2371316a750b807de941184d49ca19d277ecadcd")
