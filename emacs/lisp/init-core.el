@@ -220,7 +220,7 @@
  "c" '(projectile-compile-project :which-key "Compile project")
  "k" '(projectile-kill-buffers :which-key "Kill buffers")
  "r" '(projectile-run-project :which-key "Run project")
- "s" '(counsel-projectile-git-grep :which-key "Search in repository")
+ "s" '(counsel-projectile-rg :which-key "Search in repository")
  "t" '(projectile-run-vterm :which-key "Execute terminal"))
 
 (general-define-key
